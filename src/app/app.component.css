@@ -1,0 +1,1383 @@
+:host {
+  display: block;
+  width: 100%;
+  min-height: 100vh;
+
+  font-family: Georgia, 'Times New Roman', serif;
+
+  background: #050505;
+  color: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button {
+  font-family: inherit;
+}
+
+
+/* ==================================================
+   PANTALLA INICIAL
+================================================== */
+
+.pantalla-inicio {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 35%,
+      rgba(100, 0, 0, 0.18),
+      transparent 40%
+    ),
+    linear-gradient(
+      135deg,
+      #050505,
+      #100707,
+      #050505
+    );
+}
+
+
+/* ==================================================
+   LLUVIA DE BRILLITOS
+================================================== */
+
+.lluvia-brillitos {
+  position: absolute;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+.lluvia-brillitos span {
+  position: absolute;
+
+  width: 3px;
+  height: 3px;
+
+  border-radius: 50%;
+
+  background: white;
+
+  opacity: 0;
+
+  box-shadow:
+    0 0 6px rgba(255,255,255,.8),
+    0 0 12px rgba(212,175,55,.6);
+
+  animation: caerBrillito linear infinite;
+}
+
+.lluvia-brillitos span:nth-child(1) {
+  left: 5%;
+  animation-duration: 5s;
+}
+
+.lluvia-brillitos span:nth-child(2) {
+  left: 12%;
+  animation-duration: 7s;
+  animation-delay: 2s;
+}
+
+.lluvia-brillitos span:nth-child(3) {
+  left: 18%;
+  animation-duration: 6s;
+}
+
+.lluvia-brillitos span:nth-child(4) {
+  left: 25%;
+  animation-duration: 8s;
+  animation-delay: 3s;
+}
+
+.lluvia-brillitos span:nth-child(5) {
+  left: 31%;
+  animation-duration: 6s;
+}
+
+.lluvia-brillitos span:nth-child(6) {
+  left: 38%;
+  animation-duration: 7s;
+  animation-delay: 4s;
+}
+
+.lluvia-brillitos span:nth-child(7) {
+  left: 44%;
+  animation-duration: 5s;
+}
+
+.lluvia-brillitos span:nth-child(8) {
+  left: 51%;
+  animation-duration: 8s;
+  animation-delay: 2s;
+}
+
+.lluvia-brillitos span:nth-child(9) {
+  left: 58%;
+  animation-duration: 6s;
+  animation-delay: 3s;
+}
+
+.lluvia-brillitos span:nth-child(10) {
+  left: 64%;
+  animation-duration: 7s;
+}
+
+.lluvia-brillitos span:nth-child(11) {
+  left: 70%;
+  animation-duration: 5s;
+  animation-delay: 2s;
+}
+
+.lluvia-brillitos span:nth-child(12) {
+  left: 76%;
+  animation-duration: 8s;
+}
+
+.lluvia-brillitos span:nth-child(13) {
+  left: 82%;
+  animation-duration: 6s;
+  animation-delay: 4s;
+}
+
+.lluvia-brillitos span:nth-child(14) {
+  left: 88%;
+  animation-duration: 7s;
+}
+
+.lluvia-brillitos span:nth-child(15) {
+  left: 94%;
+  animation-duration: 5s;
+  animation-delay: 1s;
+}
+
+.lluvia-brillitos span:nth-child(16) {
+  left: 8%;
+  animation-duration: 9s;
+  animation-delay: 3s;
+}
+
+.lluvia-brillitos span:nth-child(17) {
+  left: 22%;
+  animation-duration: 8s;
+}
+
+.lluvia-brillitos span:nth-child(18) {
+  left: 35%;
+  animation-duration: 7s;
+  animation-delay: 4s;
+}
+
+.lluvia-brillitos span:nth-child(19) {
+  left: 48%;
+  animation-duration: 9s;
+  animation-delay: 2s;
+}
+
+.lluvia-brillitos span:nth-child(20) {
+  left: 61%;
+  animation-duration: 8s;
+}
+
+.lluvia-brillitos span:nth-child(21) {
+  left: 74%;
+  animation-duration: 7s;
+  animation-delay: 3s;
+}
+
+.lluvia-brillitos span:nth-child(22) {
+  left: 86%;
+  animation-duration: 9s;
+}
+
+.lluvia-brillitos span:nth-child(23) {
+  left: 97%;
+  animation-duration: 6s;
+  animation-delay: 4s;
+}
+
+@keyframes caerBrillito {
+
+  0% {
+    top: -10%;
+    opacity: 0;
+  }
+
+  20% {
+    opacity: .9;
+  }
+
+  80% {
+    opacity: .7;
+  }
+
+  100% {
+    top: 110%;
+    opacity: 0;
+  }
+}
+
+
+/* ==================================================
+   LUCES DE FONDO
+================================================== */
+
+.luz-fondo {
+  position: absolute;
+
+  width: 450px;
+  height: 450px;
+
+  border-radius: 50%;
+
+  filter: blur(100px);
+
+  opacity: .12;
+
+  pointer-events: none;
+}
+
+.luz-1 {
+  top: -180px;
+  left: -150px;
+
+  background: #8b0000;
+}
+
+.luz-2 {
+  right: -180px;
+  bottom: -180px;
+
+  background: #d4af37;
+}
+
+
+/* ==================================================
+   INICIO
+================================================== */
+
+.inicio-contenido {
+  position: relative;
+  z-index: 3;
+
+  width: min(700px, 92%);
+
+  text-align: center;
+
+  padding: 45px 20px;
+}
+
+.etiqueta {
+  margin: 0 0 22px;
+
+  color: #d4af37;
+
+  font-size: 13px;
+
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+}
+
+.inicio-contenido h1 {
+  margin: 0;
+
+  font-size: clamp(42px, 8vw, 72px);
+
+  line-height: 1.05;
+
+  font-weight: 400;
+}
+
+.inicio-contenido h1 span {
+  color: #d4af37;
+}
+
+.texto-inicio {
+  margin: 28px auto 12px;
+
+  max-width: 550px;
+
+  font-size: 18px;
+
+  line-height: 1.7;
+
+  color: rgba(255,255,255,.9);
+}
+
+.texto-inicio-secundario {
+  margin: 0 auto;
+
+  max-width: 560px;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  color: rgba(255,255,255,.58);
+}
+
+
+/* ==================================================
+   CAJA DE REGALO
+================================================== */
+
+.regalo {
+  position: relative;
+
+  width: 190px;
+  height: 190px;
+
+  margin: 38px auto 30px;
+}
+
+.sombra-regalo {
+  position: absolute;
+
+  bottom: 0;
+  left: 50%;
+
+  width: 150px;
+  height: 25px;
+
+  transform: translateX(-50%);
+
+  border-radius: 50%;
+
+  background: rgba(0,0,0,.7);
+
+  filter: blur(8px);
+}
+
+.caja-regalo {
+  position: absolute;
+
+  left: 50%;
+  bottom: 20px;
+
+  width: 135px;
+  height: 100px;
+
+  transform: translateX(-50%);
+
+  background:
+    linear-gradient(
+      90deg,
+      #8d0000,
+      #b30000,
+      #700000
+    );
+
+  border-radius: 4px;
+}
+
+.tapa-regalo {
+  position: absolute;
+
+  left: 50%;
+  bottom: 110px;
+
+  width: 150px;
+  height: 25px;
+
+  transform: translateX(-50%);
+
+  background: #a80000;
+
+  border-radius: 4px;
+}
+
+.cinta-vertical {
+  position: absolute;
+
+  left: 50%;
+  top: 0;
+
+  width: 20px;
+  height: 100%;
+
+  transform: translateX(-50%);
+
+  background: #d4af37;
+}
+
+.cinta-horizontal {
+  position: absolute;
+
+  left: 0;
+  top: 40px;
+
+  width: 100%;
+  height: 20px;
+
+  background: #d4af37;
+}
+
+.moño {
+  position: absolute;
+
+  left: 50%;
+  bottom: 126px;
+
+  width: 70px;
+  height: 45px;
+
+  transform: translateX(-50%);
+}
+
+.moño span {
+  position: absolute;
+
+  top: 10px;
+
+  width: 38px;
+  height: 25px;
+
+  background: #d4af37;
+
+  border-radius: 50% 50% 50% 10%;
+}
+
+.moño span:first-child {
+  left: 0;
+
+  transform: rotate(25deg);
+}
+
+.moño span:last-child {
+  right: 0;
+
+  transform: scaleX(-1) rotate(25deg);
+}
+
+
+/* ==================================================
+   BOTÓN ABRIR
+================================================== */
+
+.btn-abrir {
+  padding: 15px 30px;
+
+  border: 1px solid rgba(212,175,55,.7);
+
+  border-radius: 30px;
+
+  background: rgba(212,175,55,.08);
+
+  color: #d4af37;
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  transition: .25s ease;
+}
+
+.btn-abrir:hover {
+  background: rgba(212,175,55,.18);
+
+  transform: translateY(-3px);
+}
+
+.toque {
+  margin: 15px 0 0;
+
+  color: rgba(255,255,255,.35);
+
+  font-size: 12px;
+
+  font-style: italic;
+}
+
+
+/* ==================================================
+   REGALO ABIERTO
+================================================== */
+
+.regalo-abierto {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(100,0,0,.18),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(212,175,55,.06),
+      transparent 30%
+    ),
+    #050505;
+}
+
+
+/* ==================================================
+   RAMO + DEDICATORIA
+================================================== */
+
+.detalle-regalo {
+  position: relative;
+
+  z-index: 3;
+
+  width: min(1100px,100%);
+
+  min-height: 650px;
+
+  margin: 0 auto;
+
+  padding: 70px 40px 25px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+
+  gap: 50px;
+}
+
+
+/* ==================================================
+   RAMO CON IMAGEN
+================================================== */
+
+.columna-ramo {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+.ramo-contenedor {
+  position: relative;
+
+  width: 450px;
+  height: 520px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+
+/* ==================================================
+   IMAGEN DEL RAMO
+   VA ATRÁS
+================================================== */
+
+.ramo-imagen {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 420px;
+  max-width: 100%;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 1;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(
+      0 15px 18px rgba(0,0,0,.55)
+    );
+}
+
+
+/* ==================================================
+   CARROS
+   VAN ADELANTE DEL RAMO
+================================================== */
+
+.carrito {
+  position: absolute;
+
+  z-index: 5;
+
+  width: 145px;
+
+  transition:
+    transform .3s ease,
+    filter .3s ease;
+}
+
+.carrito img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(
+      0 12px 10px rgba(0,0,0,.75)
+    );
+}
+
+
+/* CARRO 1 */
+
+.carrito-1 {
+  top: 135px;
+  left: 25px;
+
+  transform: rotate(-10deg);
+}
+
+
+/* CARRO 2 */
+
+.carrito-2 {
+  top: 105px;
+  right: 20px;
+
+  transform: rotate(9deg);
+}
+
+
+/* CARRO 3 */
+
+.carrito-3 {
+  top: 205px;
+  left: 125px;
+
+  z-index: 6;
+
+  transform: rotate(-3deg);
+}
+
+
+/* CARRO 4 */
+
+.carrito-4 {
+  top: 220px;
+  right: 15px;
+
+  transform: rotate(7deg);
+}
+
+
+/* EFECTO AL PASAR EL MOUSE */
+
+.carrito:hover {
+  z-index: 10;
+
+  filter:
+    drop-shadow(
+      0 0 12px rgba(212,175,55,.35)
+    );
+
+  transform:
+    scale(1.06)
+    rotate(0deg);
+}
+
+
+/* ==================================================
+   DEDICATORIA
+================================================== */
+
+.mensaje-regalo {
+  max-width: 470px;
+
+  text-align: left;
+
+  padding: 30px 10px;
+}
+
+.para-ti-texto {
+  margin: 0 0 18px;
+
+  color: #d4af37;
+
+  font-size: 12px;
+
+  letter-spacing: 5px;
+
+  font-weight: bold;
+}
+
+.mensaje-regalo h2 {
+  margin: 0;
+
+  color: white;
+
+  font-size: clamp(42px,5vw,60px);
+
+  line-height: 1.05;
+
+  font-weight: 300;
+}
+
+.mensaje-regalo h2 strong {
+  color: #d4af37;
+
+  font-weight: 400;
+}
+
+.linea-dorada {
+  width: 70px;
+
+  height: 1px;
+
+  margin: 25px 0;
+
+  background: #d4af37;
+}
+
+.dedicatoria,
+.dedicatoria-especial,
+.aniversario,
+.final-carta {
+  color: rgba(255,255,255,.78);
+
+  font-size: 17px;
+
+  line-height: 1.8;
+}
+
+.dedicatoria {
+  color: white;
+
+  font-size: 19px;
+}
+
+.dedicatoria-especial {
+  margin-top: 22px;
+}
+
+.aniversario {
+  margin-top: 24px;
+}
+
+.aniversario strong {
+  color: #d4af37;
+
+  font-weight: 400;
+}
+
+.final-carta {
+  margin-top: 22px;
+
+  color: rgba(255,255,255,.55);
+
+  font-style: italic;
+}
+
+.corazon-final {
+  display: block;
+
+  margin-top: 25px;
+
+  color: #d4af37;
+
+  font-size: 18px;
+}
+
+
+/* ==================================================
+   NUESTROS MOMENTOS
+================================================== */
+
+.recuerdos {
+  position: relative;
+
+  z-index: 3;
+
+  width: 100%;
+
+  padding: 25px 20px 80px;
+
+  text-align: center;
+}
+
+.titulo-fotos {
+  margin: 0;
+
+  color: #d4af37;
+
+  font-size: 13px;
+
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+}
+
+.subtitulo-fotos {
+  margin: 12px 0 30px;
+
+  color: rgba(255,255,255,.5);
+
+  font-size: 14px;
+}
+
+
+/* ==================================================
+   CARRUSEL
+================================================== */
+
+.carrusel {
+  position: relative;
+
+  width: min(430px,90vw);
+
+  height: 520px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.foto-carrusel {
+  width: 310px;
+
+  height: 460px;
+
+  overflow: hidden;
+
+  border-radius: 8px;
+
+  background: #111;
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,.65),
+    0 0 30px rgba(212,175,55,.08);
+
+  animation: cambiarFoto .5s ease;
+}
+
+.foto-carrusel img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition: transform .6s ease;
+}
+
+.foto-carrusel:hover img {
+  transform: scale(1.04);
+}
+
+@keyframes cambiarFoto {
+
+  from {
+    opacity: 0;
+
+    transform: scale(.97);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+}
+
+
+/* ==================================================
+   FLECHAS
+================================================== */
+
+.flecha {
+  position: absolute;
+
+  top: 50%;
+
+  z-index: 5;
+
+  width: 42px;
+  height: 42px;
+
+  transform: translateY(-50%);
+
+  border: 1px solid rgba(212,175,55,.35);
+
+  border-radius: 50%;
+
+  background: rgba(5,5,5,.85);
+
+  color: #d4af37;
+
+  font-size: 32px;
+
+  line-height: 35px;
+
+  cursor: pointer;
+
+  transition: .25s ease;
+}
+
+.flecha:hover {
+  background: rgba(212,175,55,.12);
+
+  border-color: #d4af37;
+
+  transform:
+    translateY(-50%)
+    scale(1.08);
+}
+
+.flecha-izquierda {
+  left: 0;
+}
+
+.flecha-derecha {
+  right: 0;
+}
+
+
+/* ==================================================
+   INDICADORES
+================================================== */
+
+.indicadores {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-top: 22px;
+}
+
+.indicador {
+  width: 7px;
+  height: 7px;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,.25);
+
+  cursor: pointer;
+
+  transition: .3s ease;
+}
+
+.indicador.activo {
+  width: 22px;
+
+  border-radius: 10px;
+
+  background: #d4af37;
+}
+
+
+/* ==================================================
+   FINAL
+================================================== */
+
+.final {
+  position: relative;
+
+  z-index: 3;
+
+  width: 100%;
+
+  padding: 90px 20px 140px;
+
+  text-align: center;
+}
+
+.mensaje-final {
+  max-width: 650px;
+
+  margin: 0 auto;
+
+  animation:
+    aparecerFinal
+    1.2s ease
+    both;
+}
+
+.frase-final {
+  margin: 0 0 20px;
+
+  color: rgba(255,255,255,.5);
+
+  font-size: 16px;
+
+  font-style: italic;
+
+  letter-spacing: .5px;
+}
+
+.mensaje-final h2 {
+  margin: 0;
+
+  color: white;
+
+  font-size: clamp(38px, 7vw, 58px);
+
+  line-height: 1.15;
+
+  font-weight: 300;
+}
+
+.mensaje-final h2 span {
+  color: #d4af37;
+}
+
+.separador-final {
+  width: 60px;
+
+  height: 1px;
+
+  margin: 30px auto;
+
+  background: #d4af37;
+
+  opacity: .7;
+}
+
+.mensaje-amor {
+  max-width: 540px;
+
+  margin: 0 auto 18px;
+
+  color: rgba(255,255,255,.68);
+
+  font-size: 16px;
+
+  line-height: 1.8;
+}
+
+.mensaje-final strong {
+  display: block;
+
+  margin-top: 35px;
+
+  color: #d4af37;
+
+  font-size: 18px;
+
+  letter-spacing: 4px;
+
+  font-weight: 500;
+}
+
+.mensaje-final .corazon-final {
+  display: block;
+
+  margin-top: 18px;
+
+  color: #d4af37;
+
+  font-size: 20px;
+
+  animation:
+    latidoFinal
+    1.8s ease-in-out
+    infinite;
+}
+
+@keyframes aparecerFinal {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+@keyframes latidoFinal {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.18);
+  }
+}
+
+
+/* ==================================================
+   BOTÓN MÚSICA
+================================================== */
+
+.boton-musica {
+  position: fixed;
+
+  right: 20px;
+  bottom: 20px;
+
+  z-index: 20;
+
+  width: 45px;
+  height: 45px;
+
+  border: 1px solid rgba(212,175,55,.5);
+
+  border-radius: 50%;
+
+  background: rgba(5,5,5,.85);
+
+  color: #d4af37;
+
+  font-size: 20px;
+
+  cursor: pointer;
+}
+
+
+/* ==================================================
+   TABLET
+================================================== */
+
+@media (max-width: 850px) {
+
+  .detalle-regalo {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+
+    padding-top: 50px;
+  }
+
+  .columna-ramo {
+    order: 1;
+  }
+
+  .mensaje-regalo {
+    order: 2;
+
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    text-align: center;
+  }
+
+  .linea-dorada {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+/* ==================================================
+   MÓVIL
+================================================== */
+
+@media (max-width: 600px) {
+
+  .inicio-contenido {
+    padding: 35px 18px;
+  }
+
+  .etiqueta {
+    font-size: 10px;
+
+    letter-spacing: 3px;
+  }
+
+  .inicio-contenido h1 {
+    font-size: 44px;
+  }
+
+  .texto-inicio {
+    font-size: 16px;
+  }
+
+  .texto-inicio-secundario {
+    font-size: 13px;
+  }
+
+
+  /* RAMO */
+
+  .detalle-regalo {
+    width: 100%;
+
+    padding: 35px 10px 10px;
+
+    min-height: auto;
+
+    gap: 5px;
+  }
+
+  .ramo-contenedor {
+    width: 350px;
+    height: 420px;
+  }
+
+  .ramo-imagen {
+    width: 200px;
+  }
+
+  .carrito {
+    width: 115px;
+  }
+
+  .carrito-1 {
+    top: 135px;
+    left: 15px;
+  }
+
+  .carrito-2 {
+    top: 105px;
+    right: 5px;
+  }
+
+  .carrito-3 {
+    top: 190px;
+    left: 95px;
+  }
+
+  .carrito-4 {
+    top: 205px;
+    right: 0;
+  }
+
+
+  /* DEDICATORIA */
+
+  .mensaje-regalo {
+    padding: 15px 10px 30px;
+  }
+
+  .para-ti-texto {
+    font-size: 10px;
+
+    letter-spacing: 4px;
+  }
+
+  .mensaje-regalo h2 {
+    font-size: 42px;
+  }
+
+  .dedicatoria,
+  .dedicatoria-especial,
+  .aniversario,
+  .final-carta {
+    font-size: 15px;
+  }
+
+  .dedicatoria {
+    font-size: 17px;
+  }
+
+
+  /* FOTOS */
+
+  .recuerdos {
+    padding: 20px 15px 70px;
+  }
+
+  .titulo-fotos {
+    font-size: 11px;
+
+    letter-spacing: 3px;
+  }
+
+  .subtitulo-fotos {
+    font-size: 13px;
+
+    margin-bottom: 20px;
+  }
+
+  .carrusel {
+    width: 100%;
+
+    height: 470px;
+  }
+
+  .foto-carrusel {
+    width: 270px;
+
+    height: 400px;
+  }
+
+  .flecha {
+    width: 36px;
+    height: 36px;
+
+    font-size: 28px;
+  }
+
+  .flecha-izquierda {
+    left: 2px;
+  }
+
+  .flecha-derecha {
+    right: 2px;
+  }
+
+
+  /* FINAL */
+
+  .final {
+    padding: 70px 20px 110px;
+  }
+
+  .frase-final {
+    font-size: 14px;
+  }
+
+  .mensaje-final h2 {
+    font-size: 40px;
+  }
+
+  .mensaje-amor {
+    font-size: 15px;
+
+    line-height: 1.75;
+  }
+
+  .mensaje-final strong {
+    font-size: 15px;
+
+    letter-spacing: 3px;
+
+    line-height: 1.6;
+  }
+}
